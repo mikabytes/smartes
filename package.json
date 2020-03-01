@@ -1,0 +1,23 @@
+{
+  "name": "smartes",
+  "version": "0.0.1",
+  "description": "Ingenious server for native ES projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "es",
+    "pwa",
+    "spa",
+    "server",
+    "dev-server",
+    "javascript"
+  ],
+  "author": "@mikabytes",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mocha": "^7.1.0"
+  }
+}
