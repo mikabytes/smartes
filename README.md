@@ -110,14 +110,14 @@ curl http://localhost:3000/someBranch/smartes.js
 
 ## Working locally
 
-SmartES has a special synonym for "the current working branch" as `:`, this means that if the repository is checked out (not a bare repository) and you are currently on the `foo` branch, this will work:
+If HEAD is specified as branch, then SmartES turns off all caching headers. This is only meant to be used for developing locally, and only works if the repository is not bare.
 
 ```
 curl http://localhost:3000/:/index.js
 # fetches index.js from foo branch
 ```
 
-Also, with this special "branch" `:`, SmartES enables the detection of unstaged and staged changes. Such files will be served directly from the hard-drive as-is and with `no-cache` headers, ensuring you can work conveniently without having to commit changes to see the result.
+Also, detection of unstaged and staged changes is enabled. Such files will be served directly from the hard-drive as-is.
 
 ## Importing assets and having an index file as entry
 
