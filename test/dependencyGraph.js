@@ -1,43 +1,40 @@
 import assert from 'assert'
 
-describe('dependency graph', () => {
-  it('should add versions when none are available', async () => {
-    const dg = DependencyGraph()
-    dg.add(initial)
+import DependencyGraph from '../lib/dependencyGraph.js'
 
-    assert.equal(
-      dg.createSchema(),
-    [
-      {
-        path: './index.js',
-        hash: 'abc',
+describe('dependency graph', () => {
+  let dg, schema
+
+  beforeEach(async () => {
+    dg = DependencyGraph('index.js')
+    schema = dg.add(snapshot1)
+  })
+
+  it('should add versions when none are available', async () => {
+    assert.deepEqual(schema, {
+      'index.js': {
+        hash: 'ide',
         version: 1,
       },
-      {
-        path: './two.js',
-        hash: '123',
+      'two.js': {
+        hash: '222',
         version: 1,
       },
-    ]
-  )
+    })
+  })
 })
 
-const configuration = {
-  entry: './index.js',
-  base: './src',
-  port: 3000,
-  branches: [/.*/],
+const snapshot1 = {
+  'index.js': {
+    hash: 'ide',
+    contents: `import two from './two.js'`,
+  },
+  'two.js': {
+    hash: '222',
+    contents: `console.log('nothing much here')`,
+  },
+  'three.js': {
+    hash: '333',
+    contents: 'irrelevant',
+  },
 }
-
-const initial = [
-  {
-    path: './index.js',
-    hash: 'abc',
-    contents: `import two from './two.js`,
-  },
-  {
-    path: './two.js',
-    hash: '123',
-    contents: `import two from './two.js`,
-  },
-]
