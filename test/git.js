@@ -36,10 +36,10 @@ bf751b447578a814ea3b23a73a236fc5a32a4ff0`
     )
   })
 
-  it('should present everything', async () => {
-    const everything = await Git('test-git').everything()
+  it('should present snapshot', async () => {
+    const snapshot = await Git('test-git').snapshot()
 
-    const t = everything['test/fixtures/just-a-file.txt']
+    const t = snapshot['test/fixtures/just-a-file.txt']
 
     assert.equal('fcab2787d7c7ce4307d39f0dd3f76ef76bc5b58a', t.hash)
     assert.equal('This is for the tests. Changed.', t.contents)

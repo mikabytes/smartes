@@ -12,7 +12,7 @@ SmartES uses Git directly to track file history, and also have support for hosti
 
 ## Key points
 
-- Built for production, but is encouraged to be used as a dev-server as well (use special branch ':')
+- Built for production, but is encouraged to be used as a dev-server as well (use branch HEAD)
 - Committed files have a 1 year client-side hard cache. Each deployed file is immutable and safe to cache forever.
 - Use regex to determine what branches should be deployed
 - Uncommited changes, unstaged or staged, are given an etag
@@ -21,12 +21,12 @@ SmartES uses Git directly to track file history, and also have support for hosti
 
 **Using SmartES, make sure no one ever force-pushes to Git**
 
-Because dependencies are calculated based on the Git history, if the history were to change that could result in inconsistent states.
+Because the versions of dependencies are calculated based on the Git history, if the history were to change that could result in inconsistent states.
 
 ## Install
 
 ```
-npm install -g mikabytes/smartes
+npm install -g smartes
 ```
 
 ## Example usage
