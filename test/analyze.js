@@ -16,6 +16,7 @@ describe('analyze', () => {
       import {fourth} from './some/third.js'
       import fifth from './fifth.weirdExtension';
       /* smartes(./sixth.html) */
+      import '/absolute/path'
     `
     )
 
@@ -26,6 +27,7 @@ describe('analyze', () => {
         {path: 'two.js'},
         {path: 'some/third.js'},
         {path: 'fifth.weirdExtension'},
+        {path: 'absolute/path'},
         {path: 'sixth.html'},
       ]
     )
