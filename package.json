@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Ingenious server for native ES projects",
   "main": "index.js",
+  "bin": {
+    "smartes": "./index.js"
+  },
   "scripts": {
     "test": "mocha"
   },
