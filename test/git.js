@@ -27,13 +27,12 @@ describe('git', () => {
   })
 
   it('should present a list of commits given a treeish', async () => {
-    assert.equal(
-      await Git('test-git').getRevisions(),
-      `fcab2787d7c7ce4307d39f0dd3f76ef76bc5b58a
-b796368fab0855f54f11c566edbda07bab111b31
-bbb290d466581574affcbba6e6f026cb47f0aaaf
-bf751b447578a814ea3b23a73a236fc5a32a4ff0`
-    )
+    assert.deepEqual(await Git('test-git').getRevisions(), [
+      'bf751b447578a814ea3b23a73a236fc5a32a4ff0',
+      'bbb290d466581574affcbba6e6f026cb47f0aaaf',
+      'b796368fab0855f54f11c566edbda07bab111b31',
+      'fcab2787d7c7ce4307d39f0dd3f76ef76bc5b58a',
+    ])
   })
 
   it('should present snapshot', async () => {
