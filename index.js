@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import App from './lib/App.js'
 
 let config
