@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-import App from './lib/App.js'
+import App from "./lib/App.js"
 
 let config
 
 try {
-  config = import(process.cwd() + '/smartes.js')
+  import(process.cwd() + "/smartes.js").then((config) => {
+    App(config.default)
+  })
 } catch (e) {
   console.error('Could not load "smartes.js" file')
   process.exit(1)
 }
-
-App(config)
