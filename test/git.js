@@ -1,6 +1,6 @@
 import assert from "assert"
 
-import Git from "../lib/git.js"
+import Git from "../src/git.js"
 
 const file = "./test/fixtures/just-a-file.txt"
 

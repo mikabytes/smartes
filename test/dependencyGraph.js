@@ -1,6 +1,6 @@
 import assert from "assert"
 
-import DependencyGraph from "../lib/dependencyGraph.js"
+import DependencyGraph from "../src/dependencyGraph.js"
 
 describe("dependency graph", () => {
   let dg, schema

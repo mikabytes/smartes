@@ -1,14 +1,3 @@
-#!/usr/bin/env node
+import builder from "./src/builder.js"
 
-import App from "./lib/App.js"
-
-let config
-
-try {
-  import(process.cwd() + "/smartes.js").then((config) => {
-    App(config.default)
-  })
-} catch (e) {
-  console.error('Could not load "smartes.js" file')
-  process.exit(1)
-}
+export default builder

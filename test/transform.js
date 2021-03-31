@@ -1,6 +1,6 @@
 import assert from "assert"
 
-import transform from "../lib/transform.js"
+import transform from "../src/transform.js"
 
 describe("transform", () => {
   it("should inject in import statements", async () => {

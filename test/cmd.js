@@ -1,5 +1,5 @@
 import assert from "assert"
-import cmd from "../lib/cmd.js"
+import cmd from "../src/cmd.js"
 
 describe("cmd", () => {
   it("should execute shell commands", async () => {

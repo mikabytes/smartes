@@ -1,6 +1,6 @@
 import assert from 'assert'
 
-import analyze from '../lib/analyze.js'
+import analyze from '../src/analyze.js'
 
 describe('analyze', () => {
   it('get dependencies', async () => {
