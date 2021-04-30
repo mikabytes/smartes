@@ -2,8 +2,9 @@
   "name": "smartes",
   "version": "0.0.1",
   "description": "Ingenious server for native ES projects",
-  "main": "index.js",
+  "main": "lib/builder.js",
   "scripts": {
+    "interactive": "node interactive.js",
     "test": "mocha"
   },
   "keywords": [
